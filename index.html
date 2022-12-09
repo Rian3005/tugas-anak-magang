@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Simple To Do List</title>
+    <!--Google Font-->
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <input name="newTodo" type="text" />
+        <input type="submit" value="Tambah Todo" />
+      </form>
+
+      <ul></ul>
+      njn
+    </div>
+    jnjn
+    <!--Script-->
+    <script>
+      const form = document.querySelector("form");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const newTodo = document.querySelector("input[name=newTodo]").value;
+        addTodo(newTodo);
+        document.querySelector("input[name=newTodo]").value = "";
+      });
+
+      function addTodo(newTodo) {
+        //membuat Element li
+        const li = document.createElement("li");
+        // li.addEventListener("click", function () {
+        //   console.log("a");
+        // });
+        li.textContent = newTodo;
+        //membuat element button hapus
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "X";
+        deleteButton.addEventListener("click", function () {
+          deleteTodo(this);
+        });
+        li.appendChild(deleteButton);
+        //append ke ul
+        const ul = document.querySelector("ul");
+        ul.appendChild(li);
+        function deleteTodo(todo) {
+          const li = todo.parentNode;
+          li.remove();
+        }
+      }
+    </script>
+    <!-- kita bisa -->
+  </body>
+</html>

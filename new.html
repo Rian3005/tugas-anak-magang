@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <input type="text" name="" id="" />
+        <button type="submit">asdfghkl</button>
+      </form>
+      <ul></ul>
+    </div>
+    <script>
+      let arul = document.querySelector("form");
+      arul.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let azimi = document.querySelector("input").value;
+        if (azimi == "") {
+          alert("apam");
+        } else {
+          amir(azimi);
+        }
+        console.log("amir :", azimi);
+        document.querySelector("input").value = "";
+      });
+
+      function amir(azimi) {
+        let al = document.createElement("li");
+        al.textContent = azimi;
+        const ari = document.createElement("button");
+
+        ari.textContent = "delete";
+        ari.addEventListener("click", function () {
+          deltodo(this);
+        });
+        al.appendChild(ari);
+        al.addEventListener("click", function () {
+          console.log("awokwokkocak");
+          if (al.style.textDecoration == "line-through") {
+            console.log(" jjjj:");
+            al.style.textDecoration = "none";
+          } else {
+            al.style.textDecoration = "line-through";
+            console.log("jnjnjn");
+          }
+        });
+
+        let intan = document.querySelector("ul");
+        intan.appendChild(al);
+        function deltodo(todo) {
+          const li = todo.parentNode;
+          li.remove();
+        }
+      }
+    </script>
+  </body>
+</html>
